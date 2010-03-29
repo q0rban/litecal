@@ -218,3 +218,81 @@ div.litecal-compact .litecal-data { height:9px; }
     }
 
   div.litecal-compact .litecal-item span.popup { bottom:10px; }
+
+/**
+ * Crayon coloring
+ */
+.crayon-0  {background-color: #e00;}
+.crayon-1  {background-color: #fa0;}
+.crayon-2  {background-color: #6e0;}
+.crayon-3  {background-color: #0c9;}
+.crayon-4  {background-color: #06c;}
+.crayon-5  {background-color: #66c;}
+.crayon-6  {background-color: #c08;}
+
+.crayon-7  {background-color: #c66;}
+.crayon-8  {background-color: #654;}
+.crayon-9  {background-color: #088;}
+.crayon-10 {background-color: #246;}
+.crayon-11 {background-color: #668;}
+.crayon-12 {background-color: #5a5;}
+.crayon-13 {background-color: #933;}
+
+.crayon-14 {background-color: #aaa;}
+.crayon-15 {background-color: #555;}
+
+.crayon-swatch {
+  width:30px;
+  height:15px;
+  line-height:15px;
+  margin:0px auto;
+  display:block;
+}
+
+.crayon-swatch:hover { position:relative; }
+
+.crayon-swatch span.label {
+  height:15px;
+  text-align:center;
+  color:#fff;
+  font-size:9px;
+  display:block;
+  overflow:hidden;
+}
+
+.crayon span.crayon-popup { display:none; }
+
+.crayon:hover span.crayon-popup {
+  display:block;
+
+  position:absolute;
+  left:50%;
+  bottom:5px;
+  z-index:1000;
+
+  width:150px;
+  margin-left:-24px;
+  padding:0px 0px 10px;
+
+  overflow:hidden;
+  opacity:.8;
+  background: url(popup.png) 20px 100% no-repeat;
+}
+
+.crayon:hover span.crayon-popup span.crayon-popup-label {
+  display:block;
+  padding:10px;
+  background:#000;
+  color:#fff;
+  border-radius: 5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius: 5px;
+}
+
+.crayon:hover span.crayon-popup * { display:inline; }
+
+span.crayon-marker {
+  display:inline;
+  padding:0em .6em;
+  margin-right:.5em;
+}
