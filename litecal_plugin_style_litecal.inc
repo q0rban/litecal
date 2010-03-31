@@ -149,6 +149,7 @@ class litecal_plugin_style_litecal extends views_plugin_style {
     if (!empty($view->date_info->date_handler_fields)) {
       $date_field = $view->date_info->date_handler_fields;
       $date_field = array_shift($date_field);
+      $date_type  = $date_field['view_field']->content_field['type'];
       $date_field = $date_field['view_field']->real_field;
 
       $alias_from = !empty($view->date_info->aliases[$date_field]) ? $view->date_info->aliases[$date_field] : NULL;
@@ -160,8 +161,8 @@ class litecal_plugin_style_litecal extends views_plugin_style {
         }
         foreach ($view->result as $num => $row) {
           $item = new StdClass();
-          $item->from = date_convert($row->{$alias_from}, DATE_ISO, DATE_OBJECT);
-          $item->to = date_convert($row->{$alias_to}, DATE_ISO, DATE_OBJECT);
+          $item->from = date_convert($row->{$alias_from}, $date_type, DATE_OBJECT);
+          $item->to = date_convert($row->{$alias_to}, $date_type, DATE_OBJECT);
           $item->id = !empty($colorby_field) ? $colorby_field->render($row) : $row->{$view->base_field};
           $item->data = $vars['rows'][$num];
 
